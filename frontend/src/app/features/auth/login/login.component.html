@@ -1,0 +1,64 @@
+<form
+  appCard
+  class="flex flex-col gap-6"
+  [formGroup]="loginForm"
+  (ngSubmit)="submit()"
+  *ngIf="!successMessage; else success"
+>
+  <div class="flex flex-col gap-2">
+    <label for="email" class="font-semibold">Email</label>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      [formControl]="loginForm.controls.email"
+      class="border rounded focus:outline-none px-2 py-1 focus:border-slate-400 transition-colors duration-150 ease-in-out"
+    />
+  </div>
+
+  <div class="flex flex-col gap-1">
+    <div class="flex flex-col gap-2">
+      <label for="password" class="font-semibold">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        [formControl]="loginForm.controls.password"
+        class="border rounded focus:outline-none px-2 py-1 focus:border-slate-400 transition-colors duration-150 ease-in-out"
+      />
+    </div>
+
+    <a
+      class="text-gray-400 text-xs cursor-pointer hover:text-blue-500 transition-colors duration-150 ease-in-out"
+      [routerLink]="['/', 'forgot-password']"
+      >Forgot your password?</a
+    >
+  </div>
+
+  <button appButton class="mt-4" [disabled]="loading">
+    {{ loading ? "Loading..." : "Login" }}
+  </button>
+
+  <h1>
+    Don't have an account?
+    <span
+      class="text-blue-500 font-semibold cursor-pointer"
+      [routerLink]="['/', 'register']"
+      >Register</span
+    >
+  </h1>
+
+  <p
+    *ngIf="err"
+    class="text-center p-2 rounded-md border-red-500 border bg-red-200/20 font-light"
+  >
+    {{ err }}
+  </p>
+</form>
+<ng-template #success>
+  <p
+    class="text-center p-2 rounded-md border-green-500 border bg-green-200/20 font-light"
+  >
+    {{ successMessage }}
+  </p>
+</ng-template>

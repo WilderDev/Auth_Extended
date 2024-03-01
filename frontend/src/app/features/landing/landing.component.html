@@ -1,0 +1,48 @@
+<section
+  class="flex justify-between items-center gap-7 max-w-5xl flex-col lg:flex-row"
+>
+  <div class="flex flex-col gap-12">
+    <h1 class="text-4xl md:text-6xl font-extrabold text-center md:text-left">
+      Astro World
+    </h1>
+
+    <div
+      class="flex flex-col gap-8 font-semibold text-sm md:text-lg max-w-2xl text-center md:text-left"
+    >
+      <h2>
+        Embark on an interstellar journey through the wonders of Astro World.
+        Discover galaxies far beyond the reach of a telescope, where stars and
+        planets dance in cosmic harmony.
+      </h2>
+      <h2>
+        Dive into the mysteries of space, exploring celestial phenomena and
+        unraveling the secrets of the universe. Astro World is your gateway to
+        the stars, offering a unique adventure into the vastness of the cosmos.
+      </h2>
+    </div>
+
+    <div class="flex flex-col md:flex-row gap-4 items-center">
+      <button
+        appButton
+        routerLink="login"
+        class="px-4 py-2 md:px-12 md:py-4 text-lg md:text-2xl font-normal"
+      >
+        Login
+      </button>
+      <button
+        appButton
+        routerLink="register"
+        class="px-4 py-2 md:px-12 md:py-4 text-lg md:text-2xl font-normal"
+      >
+        Register
+      </button>
+    </div>
+  </div>
+  <img
+    ngSrc="assets/images/astro.png"
+    alt=""
+    width="400"
+    height="600"
+    priority
+  />
+</section>
